@@ -2,6 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  var now = day.js().format(mm/dd/yyy)
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -37,10 +38,11 @@ $(function () {
       localStorage.setItem('16tasks', hr16);
     var hr17 = document.getElementById('17').value;
       localStorage.setItem('17tasks', hr17);
-
-  })
+})
 
   //
   // TODO: Add code to display the current date in the header of the page.
+  var currentDay = document.getElementById('#currentDay');
+  currentDay.textContent = now.value;
 
 });
