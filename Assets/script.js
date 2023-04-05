@@ -2,7 +2,8 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  var now = day.js().format(mm/dd/yyy)
+  var now = day.js().format(mm/dd/yyy);
+  var time12 = day.js().hour(24);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -15,11 +16,20 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+  var currentHour = day.js().hour()
+
+  for (var i = 9; i < 18; i++) {
+    if (i < currentHour) {
+      var pastHour = document.getElementById('now');
+      now.classList.add('past');
+    } else if (i === currentHour) {
+      var presentHour = document.getElementById('now');
+      now.classList.add('present');
+    }}
   //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  $('.saveBtn').click(function () {
+
+  //Setting tasks written into hour slots to local storage
+  function saveToStorage() {
     var hr9 = document.getElementById('9').value;
       localStorage.setItem('9tasks', hr9);
     var hr10 = document.getElementById('10').value;
@@ -38,11 +48,16 @@ $(function () {
       localStorage.setItem('16tasks', hr16);
     var hr17 = document.getElementById('17').value;
       localStorage.setItem('17tasks', hr17);
-})
+  }   
 
-  //
+  //used to display the tasks that were saved
+
+
   // TODO: Add code to display the current date in the header of the page.
   var currentDay = document.getElementById('#currentDay');
   currentDay.textContent = now.value;
+
+  //Adding event listener for the save button at the bottom
+  saveBtn.addEventListener('click', saveToStorage())
 
 });
