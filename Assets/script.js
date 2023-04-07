@@ -4,18 +4,6 @@
 $(function () {
   var now = day.js().format(mm/dd/yyy);
   var time12 = day.js().hour(24);
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
   var currentHour = day.js().hour()
 
   for (var i = 9; i < 18; i++) {
@@ -25,6 +13,9 @@ $(function () {
     } else if (i === currentHour) {
       var presentHour = document.getElementById('now');
       now.classList.add('present');
+    } else (i > currentHour); {
+      var futureHour = document.getElementById('now');
+      now.classList.add('future');
     }}
   //
 
@@ -51,11 +42,28 @@ $(function () {
   }   
 
   //used to display the tasks that were saved
-
+  var get9 = localStorage.getItem(hr9)
+    document.getElementById('9').value = get9;
+  var get10 = localStorage.getItem(hr10)
+    document.getElementById('10').value = get10;
+  var get11 = localStorage.getItem(hr11)
+    document.getElementById('11').value = get11;
+  var get12 = localStorage.getItem(hr12)
+    document.getElementById('12').value = get12;
+  var get13 = localStorage.getItem(hr13)
+    document.getElementById('13').value = get13;
+  var get14 = localStorage.getItem(hr14)
+    document.getElementById('14').value = get14;
+  var get15 = localStorage.getItem(hr15)
+    document.getElementById('15').value = get15;
+  var get16 = localStorage.getItem(hr16)
+    document.getElementById('16').value = get16;
+  var get17 = localStorage.getItem(hr17)
+    document.getElementById('17').value = get17;
 
   // TODO: Add code to display the current date in the header of the page.
   var currentDay = document.getElementById('#currentDay');
-  currentDay.textContent = now.value;
+  currentDay.textContent = now.val;
 
   //Adding event listener for the save button at the bottom
   saveBtn.addEventListener('click', saveToStorage())
