@@ -61,7 +61,7 @@ $(function () {
   var currentDay = document.getElementById('#current4Day');
 
   //Adding event listener for the save button at the bottom
-  $document.ready(function () { $("savebutton").click(function () {
+  $(this).ready(function () { $("savebutton").click(function () {
     var id = $(this).prev().attr("id");
     var text = $.trim($(id).val())
     localStorage.setItem()
