@@ -58,9 +58,14 @@ $(function () {
       var get17 = localStorage.getItem('17tasks');
   }
   // TODO: Add code to display the current date in the header of the page.
-  var currentDay = document.getElementById('#currentDay');
+  var currentDay = document.getElementById('#current4Day');
 
   //Adding event listener for the save button at the bottom
+  $document.ready(function () { $("savebutton").click(function () {
+    var id = $(this).prev().attr("id");
+    var text = $.trim($(id).val())
+    localStorage.setItem()
+  })});
   saveBtn.addEventListener('click', saveToStorage())
   displayStorage();
 });
