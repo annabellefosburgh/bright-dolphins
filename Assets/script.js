@@ -5,15 +5,15 @@ $(function () {
   var currentHour = dayjs().hour();
   var timeBlocks = $(".time-block");
   var saveBtn = document.getElementById('savebutton');
-  var hr9 = document.getElementById('9').value;
-  var hr10 = document.getElementById('10').value;
-  var hr11 = document.getElementById('11').value;
-  var hr12 = document.getElementById('12').value;
-  var hr13 = document.getElementById('13').value;
-  var hr14 = document.getElementById('14').value;
-  var hr15 = document.getElementById('15').value;
-  var hr16 = document.getElementById('16').value;
-  var hr17 = document.getElementById('17').value;
+  var hr9 = document.getElementById('9').innerText;
+  var hr10 = document.getElementById('10').innerText;
+  var hr11 = document.getElementById('11').innerText;
+  var hr12 = document.getElementById('12').innerText;
+  var hr13 = document.getElementById('13').innerText;
+  var hr14 = document.getElementById('14').innerText;
+  var hr15 = document.getElementById('15').innerText;
+  var hr16 = document.getElementById('16').innerText;
+  var hr17 = document.getElementById('17').innerText;
 
   //Display Current Date
   $("#currentDay").html(now);
