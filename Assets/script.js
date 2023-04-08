@@ -47,15 +47,15 @@ $(function () {
   
   //used to display the tasks that were saved
   function displayStorage() {
-      var get9 = localStorage.getItem(hr9);
-      var get10 = localStorage.getItem(hr10);
-      var get11 = localStorage.getItem(hr11);
-      var get12 = localStorage.getItem(hr12);
-      var get13 = localStorage.getItem(hr13);
-      var get14 = localStorage.getItem(hr14);
-      var get15 = localStorage.getItem(hr15);
-      var get16 = localStorage.getItem(hr16);
-      var get17 = localStorage.getItem(hr17);
+      var get9 = localStorage.getItem('9tasks');
+      var get10 = localStorage.getItem('10tasks');
+      var get11 = localStorage.getItem('11tasks');
+      var get12 = localStorage.getItem('12tasks');
+      var get13 = localStorage.getItem('13tasks');
+      var get14 = localStorage.getItem('14tasks');
+      var get15 = localStorage.getItem('15tasks');
+      var get16 = localStorage.getItem('16tasks');
+      var get17 = localStorage.getItem('17tasks');
   }
   // TODO: Add code to display the current date in the header of the page.
   var currentDay = document.getElementById('#currentDay');
