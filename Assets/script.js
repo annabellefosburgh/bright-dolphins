@@ -1,5 +1,6 @@
 // Wrap all code that interacts with the DOM in a call to jQuery
 $(function () { 
+  //formatting variables using dayjs
   var now = dayjs().format("MM/DD/YYYY");
   var currentHour = dayjs().hour();
   var boxes = $(".text-box")
